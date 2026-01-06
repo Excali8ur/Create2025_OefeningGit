@@ -7,6 +7,7 @@
             Console.WriteLine("Hello, World!");
             Console.WriteLine("Waarom lees je dit?");
             Console.WriteLine("Dit is een nieuwe regel toegevoegd in VSCode.");
+            Console.WriteLine("test");
         }
     }
 }
