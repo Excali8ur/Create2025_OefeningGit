@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace OverervingDieren.Model
 {
-    internal class Dier
+    /// <summary>
+    /// Abstracte klasse Dier, want een algemeen dier maak je niet (altijd een subklasse)
+    /// </summary>
+    internal abstract class Dier
     {
         //Eigenschappen
-        protected int aantalPoten;
+        //Protected -> Beschikbaar voor eigen klasse en alle kinderen      
+
         protected bool heeftVacht;
         protected string naam;
         protected string geluid;
+
+        //Property voor aantal poten. Deze mag alleen opgevraagd worden van buitenaf
+        //Aanpassen mag alleen binnen de klasse en subklassen
+        public int aantalPoten { get; protected set; }
 
         //Constructoren
         /*public Dier()
@@ -32,9 +40,15 @@ namespace OverervingDieren.Model
         }
 
         //Gedrag
+        /*
         public string MaakGeluid()
         {
             return $"{naam} maakt het geluid {geluid}";
         }
+        */
+
+        //Abstracte methode -> Wordt hier niet gemaakt, alleen de header!!
+        //Hiermee dwing je af dat iedere subklasse zijn eigen versie maakt
+        public abstract string MaakGeluid();
     }
 }
