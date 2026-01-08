@@ -15,9 +15,18 @@ namespace OverervingDieren.Model
             this.heeftHoning = false;
         }
 
+        public override string MaakGeluid()
+        {
+            return $"{naam} maakt het geluid {geluid}";
+        }
+
         public void VindHoning()
         {
             heeftHoning = true;
+            if (heeftHoning)
+            {
+                Console.WriteLine($"{naam} heeft honing gevonden!");
+            }
         }
 
         public void EetHoning()

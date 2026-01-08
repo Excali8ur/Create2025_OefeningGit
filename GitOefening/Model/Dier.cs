@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OverervingDieren.Model
 {
-    internal class Dier
+    internal abstract class Dier
     {
         //Eigenschappen
         protected int aantalPoten;
@@ -23,9 +23,6 @@ namespace OverervingDieren.Model
         }
 
         //Gedrag
-        public string MaakGeluid()
-        {
-            return $"{naam} maakt het geluid {geluid}";
-        }
+        public abstract string MaakGeluid();
     }
 }
