@@ -12,8 +12,8 @@ namespace OverervingDieren.Model
         private bool draagtHoed;
 
         //Constructor
-        public Vogelbekdier(string naam, string geluid, int aantalPoten, bool heeftVacht, bool draagtHoed) 
-            : base(naam, geluid, aantalPoten, heeftVacht) //Constructor van de basisklasse
+        public Vogelbekdier(string naam, string geluid, int aantalPoten, bool heeftVacht, bool draagtHoed, string voedsel) 
+            : base(naam, geluid, aantalPoten, heeftVacht, voedsel) //Constructor van de basisklasse
         {
             this.draagtHoed = draagtHoed;
         }
