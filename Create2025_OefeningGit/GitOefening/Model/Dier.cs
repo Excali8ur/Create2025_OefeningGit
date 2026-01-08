@@ -36,5 +36,10 @@ namespace OverervingDieren.Model
         {
             return $"{naam} maakt het geluid {geluid}";
         }
+
+        public string Eten()
+        {
+            return $"{naam} eet zijn voer";
+        }
     }
 }

@@ -21,8 +21,12 @@ namespace OverervingDieren
 
             Vogelbekdier vogelbekdier = new Vogelbekdier("Perry de tweede", "Prrrr", 4, true, false);
 
+            Beer Beertje = new Beer("Herbert", "Bruhhh", 4, true, false);
+
             Console.WriteLine(vogelbekdier.MaakGeluid());
+            Console.WriteLine(Beertje.MaakGeluid());
             vogelbekdier.ZetHoedOp();
+            Beertje.Slapen();
         }
     }
 }
