@@ -9,7 +9,8 @@ namespace OverervingDieren.Model
     internal abstract class Dier
     {
         //Eigenschappen
-        protected int aantalPoten;
+        //Protected -> Beschikbaar voor eigen klasse en alle kinderen      
+
         protected bool heeftVacht;
         protected string naam;
         protected string geluid;
