@@ -28,6 +28,16 @@ namespace OverervingDieren.Model
         {
             draagtHoed = false;
         }
+
+        /// <summary>
+        /// Deze methode overschrijft (override) de abstracte methode uit de hoofdklasse Dier
+        /// Iedere subklasse moet dit zelf doen.
+        /// </summary>
+        /// <returns></returns>
+        public override string MaakGeluid()
+        {
+            return $"{naam} maakt het geluid {geluid}";
+        }
     }
 
 
