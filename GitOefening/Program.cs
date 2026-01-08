@@ -9,9 +9,10 @@ namespace OverervingDieren
             Console.WriteLine("Hello, World!");
 
 
-            Dier perry = new Dier("Perry", "Prrrr", 4, true);
-            Dier barry = new Dier("Barry", "Growl", 4, true);
-            Dier gerry = new Dier("Gerry", "Sjlur", 0, false);
+            Dier perry = new Vogelbekdier("Perry", "Prrrr", 4, true, true);
+            Dier barry = new Vogelbekdier("Barry", "Growl", 4, true, false);
+            
+            Dier gerry = new Kat("Gerry", "Sjlur", 0, false);
 
             Console.WriteLine( perry.MaakGeluid());
             Console.WriteLine( gerry.MaakGeluid());
@@ -19,7 +20,7 @@ namespace OverervingDieren
             string geluid = barry.MaakGeluid();
             Console.WriteLine(geluid);
 
-            Vogelbekdier vogelbekdier = new Vogelbekdier("Perry de tweede", "Prrrr", 4, true, false);
+            Dier vogelbekdier = new Vogelbekdier("Perry de tweede", "Prrrr", 4, true, false);
 
             Beer Beertje = new Beer("Herbert", "Bruhhh", 4, true, false);
 
