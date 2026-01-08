@@ -23,4 +23,5 @@ internal class Beer : Dier
         }
         return $"{naam} houd  {ReactieOpZalm} van zalm";
     }
-}
+
+//hoihoi
