@@ -23,6 +23,15 @@ namespace OverervingDieren
 
             Console.WriteLine(vogelbekdier.MaakGeluid());
             vogelbekdier.ZetHoedOp();
+
+            Tyrannosaurus trex01 = new Tyrannosaurus("Terry", "Zeer luid gebrul", 2, false, false, false);
+
+            Console.WriteLine(trex01.MaakGeluid());
+            trex01.DinoHungry();
+            trex01.DinoMad();
+            trex01.DinoSated();
+            trex01.DinoCalm();
+
         }
     }
 }

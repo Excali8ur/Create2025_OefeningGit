@@ -29,7 +29,4 @@ namespace OverervingDieren.Model
             draagtHoed = false;
         }
     }
-
-
-
 }
