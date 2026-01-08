@@ -39,7 +39,4 @@ namespace OverervingDieren.Model
             return $"{naam} maakt het geluid {geluid}";
         }
     }
-
-
-
 }
