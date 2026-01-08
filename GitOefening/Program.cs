@@ -23,9 +23,22 @@ namespace OverervingDieren
             Dier vogelbekdier = new Vogelbekdier("Perry de tweede", "Prrrr", 4, true, false);
 
             Console.WriteLine(vogelbekdier.MaakGeluid());
-            //Gebruik maken van specifieke eigenschappen of gedrag van de subklasse ->
-            //Eerst aangeven welke subklasse het is (tussen () )
-            ( (Vogelbekdier)vogelbekdier ).ZetHoedOp();
+            vogelbekdier.ZetHoedOp();
+
+            Beer larry = new Beer("larry", "growl", 4, true, true);
+            int hoeveelkeer = 0;
+            
+            while (hoeveelkeer <= 20)
+            {
+                larry.DrinktBier();
+                Console.WriteLine(larry.biertjesOp);
+                bool Dronken = larry.IsDronken();
+                if (Dronken == true)
+                {
+                    Console.WriteLine("De beer is dronken");
+                }
+                hoeveelkeer++;
+            }
         }
     }
 }
