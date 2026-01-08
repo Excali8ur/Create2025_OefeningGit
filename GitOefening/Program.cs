@@ -23,6 +23,21 @@ namespace OverervingDieren
 
             Console.WriteLine(vogelbekdier.MaakGeluid());
             vogelbekdier.ZetHoedOp();
+
+            Beer larry = new Beer("larry", "growl", 4, true,  true);
+            int hoeveelkeer = 0;
+            
+            while (hoeveelkeer <= 20)
+            {
+                larry.DrinktBier();
+                Console.WriteLine(larry.biertjesOp);
+                bool Dronken = larry.IsDronken();
+                if (Dronken == true)
+                {
+                    Console.WriteLine("De beer is dronken");
+                }
+                hoeveelkeer++;
+            }
         }
     }
 }
