@@ -23,9 +23,10 @@ namespace OverervingDieren
             Dier vogelbekdier = new Vogelbekdier("Perry de tweede", "Prrrr", 4, true, false);
 
             Console.WriteLine(vogelbekdier.MaakGeluid());
-            //Gebruik maken van specifieke eigenschappen of gedrag van de subklasse ->
-            //Eerst aangeven welke subklasse het is (tussen () )
-            ( (Vogelbekdier)vogelbekdier ).ZetHoedOp();
+            vogelbekdier.ZetHoedOp();
+
+            Slak slak= new Slak("bob", "slupp", 0, false, true); 
+            Console.WriteLine(slak.MaakGeluid());
         }
     }
 }
