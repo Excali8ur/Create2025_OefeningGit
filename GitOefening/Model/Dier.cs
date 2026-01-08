@@ -40,15 +40,15 @@ namespace OverervingDieren.Model
         }
 
         //Gedrag
-        /*
+     
         public string MaakGeluid()
         {
             return $"{naam} maakt het geluid {geluid}";
         }
-        */
 
-        //Abstracte methode -> Wordt hier niet gemaakt, alleen de header!!
-        //Hiermee dwing je af dat iedere subklasse zijn eigen versie maakt
-        public abstract string MaakGeluid();
+        public string Eten()
+        {
+            return $"{naam} eet zijn voer";
+        }
     }
 }
