@@ -18,6 +18,10 @@ namespace OverervingDieren.Model
             this.draagtHoed = draagtHoed;
         }
 
+        public override string MaakGeluid()
+        {
+            return $"{naam} maakt het geluid {geluid}";
+        }
 
         public void ZetHoedOp()
         {
