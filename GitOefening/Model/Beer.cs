@@ -23,12 +23,10 @@ namespace OverervingDieren.Model
 
         public void DrinktBier()
         {
-            Console.WriteLine(drinktBier);
 
             if (drinktBier == true)
             { 
                 biertjesOp += 1;
-                Console.WriteLine("ik drink");
                 if (biertjesOp == 15)
                 {
                     isDronken = true;
