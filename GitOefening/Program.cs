@@ -23,8 +23,6 @@ namespace OverervingDieren
 
             Console.WriteLine(vogelbekdier.MaakGeluid());
             vogelbekdier.ZetHoedOp();
-
-            
         }
     }
 }
