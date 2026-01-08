@@ -16,13 +16,15 @@ namespace OverervingDieren.Model
         {
             this.biertjesOp = 0;
             this.isDronken = false;
+            this.drinktBier= drinktBier;
 
         }
 
 
         public void DrinktBier()
         {
-            Console.WriteLine("ik werk tot hier");
+            Console.WriteLine(drinktBier);
+
             if (drinktBier == true)
             { 
                 biertjesOp += 1;
