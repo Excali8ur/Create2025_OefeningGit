@@ -13,6 +13,7 @@ namespace OverervingDieren.Model
         protected bool heeftVacht;
         protected string naam;
         protected string geluid;
+        protected string voedsel;
 
         //Constructoren
         /*public Dier()
@@ -23,12 +24,13 @@ namespace OverervingDieren.Model
             this.heeftVacht = true;
         }*/
 
-        public Dier(string naam, string geluid, int aantalPoten, bool heeftVacht)
+        public Dier(string naam, string geluid, int aantalPoten, bool heeftVacht, string voedsel)
         {
             this.naam = naam;
             this.geluid = geluid;
             this.aantalPoten = aantalPoten;
             this.heeftVacht = heeftVacht;
+            this.voedsel = voedsel;
         }
 
         //Gedrag
