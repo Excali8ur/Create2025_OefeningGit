@@ -23,6 +23,16 @@ namespace OverervingDieren
 
             Console.WriteLine(vogelbekdier.MaakGeluid());
             vogelbekdier.ZetHoedOp();
+
+            Console.WriteLine("Perry het vogelbekdier????");
+            
+            Beer boory = new Beer("boory","ik HOu van ZALM",3, true, true);
+            Console.WriteLine(boory.houIkVanZalm());
+            Console.WriteLine(boory.MaakGeluid());
+            
+            Beer baary = new Beer("baary","IK HAAT ZALM",5, true, false);
+            Console.WriteLine(boory.houIkVanZalm());
+            Console.WriteLine(boory.MaakGeluid());
         }
     }
 }
