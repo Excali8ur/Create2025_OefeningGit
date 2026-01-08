@@ -23,6 +23,9 @@ namespace OverervingDieren
 
             Console.WriteLine(vogelbekdier.MaakGeluid());
             vogelbekdier.ZetHoedOp();
+
+            Slak slak= new Slak("bob", "slupp", 0, false, true); 
+            Console.WriteLine(slak.MaakGeluid());
         }
     }
 }
