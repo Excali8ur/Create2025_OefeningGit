@@ -21,8 +21,11 @@ internal class Beer : Dier
         {
             ReactieOpZalm = "Helemaal NIET";
         }
-
         return $"{naam} houd  {ReactieOpZalm} van zalm";
+    }
+    public override string MaakGeluid()
+    {
+        return geluid;
     }
 }
 

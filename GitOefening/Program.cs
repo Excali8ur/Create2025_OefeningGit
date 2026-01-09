@@ -23,7 +23,7 @@ namespace OverervingDieren
             Dier vogelbekdier = new Vogelbekdier("Perry de tweede", "Prrrr", 4, true, false);
 
             Console.WriteLine(vogelbekdier.MaakGeluid());
-            vogelbekdier.ZetHoedOp();
+            //Vogelbekdier.ZetHoedOp();
 
             Console.WriteLine("Perry het vogelbekdier????");
             
