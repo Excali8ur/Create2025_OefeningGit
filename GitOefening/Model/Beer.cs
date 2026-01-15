@@ -1,32 +1,14 @@
-namespace OverervingDieren.Model;
-
-internal class Beer : Dier
+﻿namespace OverervingDieren.Model
 {
-    protected bool houVanZalm;
-    private string ReactieOpZalm;
-
-    public Beer(string naam, string geluid, int aantalPoten, bool heeftVacht, bool houVanZalm)
-        : base(naam, geluid, aantalPoten, heeftVacht) //Constructor van de basisklasse
+    public class Beer : Dier
     {
-        this.houVanZalm = houVanZalm;
-    }
-
-    public string houIkVanZalm()
-    {
-        if (houVanZalm == true)
+        public Beer(string naam, string geluid, int aantalPoten, bool heeftVacht, bool kanVliegen) 
+            : base(naam, geluid, aantalPoten, heeftVacht, kanVliegen)
         {
-            ReactieOpZalm = "Heel erg";
         }
-        else
+        public override string MaakGeluid()
         {
-            ReactieOpZalm = "Helemaal NIET";
+            throw new NotImplementedException();
         }
-        return $"{naam} houd  {ReactieOpZalm} van zalm";
-    }
-    public override string MaakGeluid()
-    {
-        return geluid;
     }
 }
-
-//hoihoi
