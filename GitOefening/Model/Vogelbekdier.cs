@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 
 namespace OverervingDieren.Model
 {
-    internal class Vogelbekdier : Dier
+    public class Vogelbekdier : Dier
     {
         //Eigenschappen specifiek voor Volgelbekdieren
-        private bool draagtHoed;
+        public bool draagtHoed { get; private set; }
 
         //Constructor
-        public Vogelbekdier(string naam, string geluid, int aantalPoten, bool heeftVacht, bool draagtHoed) 
-            : base(naam, geluid, aantalPoten, heeftVacht) //Constructor van de basisklasse
+        public Vogelbekdier(string naam, string geluid, int aantalPoten, bool heeftVacht, bool kanVliegen, bool draagtHoed) 
+            : base(naam, geluid, aantalPoten, heeftVacht, kanVliegen) //Constructor van de basisklasse
         {
             this.draagtHoed = draagtHoed;
         }
-
 
         public void ZetHoedOp()
         {

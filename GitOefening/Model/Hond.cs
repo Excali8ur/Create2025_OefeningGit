@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 
 namespace OverervingDieren.Model
 {
-    public class Kat : Dier
+    public class Hond : Dier
     {
+        
+
         //Constructor
-        public Kat(string naam, string geluid, int aantalPoten, bool heeftVacht, bool kanVliegen)
+        public Hond(string naam, string geluid, int aantalPoten, bool heeftVacht, bool kanVliegen)
             : base(naam, geluid, aantalPoten, heeftVacht, kanVliegen) //Constructor van de basisklasse
         {
-            
         }
 
         public override string MaakGeluid()
         {
-            return "Miauw";
+            return "Woef";
         }
+
     }
 }
