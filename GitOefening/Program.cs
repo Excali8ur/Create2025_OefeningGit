@@ -22,6 +22,10 @@ namespace OverervingDieren
                         Console.WriteLine("Optie 1: Toon eigenaren met dieren");
                         ToonEigenarenMetDieren();
                         break;
+                    case "2":
+                        Console.WriteLine("optie 2: Voeg dier toe aan eigenaar");
+                        VoegDierToeAanEigenaar();
+                        break;
                     case "s":
                     case "S":
                         Console.WriteLine("Doei");
@@ -67,6 +71,64 @@ namespace OverervingDieren
                 Console.WriteLine();
             }
         }
+
+        private static void VoegDierToeAanEigenaar()
+        {
+            string geselecteerdDier = Console.WriteLine("Welk dier wil je toevoegen");
+            Console.WriteLine($"Welke eigenaar wil je {geselecteerdDier} geven");
+
+        }
+
+        // Een controle maken voor elke soort of de ingevulde soort klopt 
+
+        private static void SoortChecker()
+        {
+            bool fout = true;
+
+            while (fout)
+            {
+                Console.WriteLine("Welke soort is het dier?");
+                string KeuzeSoort = Console.ReadLine().ToLower();
+                switch (KeuzeSoort)
+                {
+                    case "hond":
+                        break;
+                    case "kat":
+                        break;
+                    case "vogel":
+                        break;
+                    case "paard":
+                        break;
+                    case "vogelbekdier":
+                        break;
+                    case "slak":
+                        break;
+                    case "beer":
+                        break;
+                    case "vlinder":
+                        break;
+                    case "eekhoorn":
+                        break;
+                    case "kikker":
+                        break;
+                    case "dolfijn":
+                        break;
+                    case "schildpad":
+                        break;
+                    case "kangoeroe":
+                        break;
+                    case "octopus":
+                        break;
+                    case "papegaai":
+                        break;
+                    default:
+                        Console.WriteLine("Onbekende of invalide keuze, probeer opnieuw");
+                        break;
+
+
+                }
+        //Dit hierna ook doen voor de naam
+
         /*
         Dier perry = new Vogelbekdier("Perry", "Prrrr", 4, true, true);
         Dier barry = new Vogelbekdier("Barry", "Growl", 4, true, false);
