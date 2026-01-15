@@ -159,7 +159,7 @@ namespace OverervingDieren.DAL
             List<string> eigenaarGegevens = new List<string>();
 
             //Eerst controleren of het dier al bestaat bij de eigenaren
-            string checkQuery = "SELECT COUNT(*) FROM DIER WHERE Naam = @Naam AND EigenaarId = @EigenaarId";
+            string checkQuery = "SELECT COUNT(*) FROM DIER WHERE Naam = @Naam AND Eigenaar = @EigenaarId";
             using var checkConnection = new SqlConnection(connectionString);
             checkConnection.Open();
             using var checkCommand = new SqlCommand(checkQuery, checkConnection);
@@ -173,8 +173,16 @@ namespace OverervingDieren.DAL
                 throw new Exception("Dit dier bestaat al voor deze eigenaren.");
             }
 
+            //Volgende ID opzoeken
+            string chipnrQuery = "SELECT MAX(ChipNr) FROM DIER";
+            using var chipConnection = new SqlConnection(connectionString);
+            chipConnection.Open();
+            using var chipCommand = new SqlCommand(chipnrQuery, chipConnection);
+            object result = chipCommand.ExecuteScalar();
+            int nextChipNr = (result != DBNull.Value) ? Convert.ToInt32(result) + 1 : 1;
+
             //SoortID opzoeken bij de naam
-            string soortIdQuery = "SELECT Id FROM SOORT WHERE Naam = @SoortNaam";
+            string soortIdQuery = "SELECT SoortId FROM SOORT WHERE Soort = @SoortNaam";
             using var soortConnection = new SqlConnection(connectionString);
             soortConnection.Open();
             using var soortCommand = new SqlCommand(soortIdQuery, soortConnection);
@@ -184,12 +192,14 @@ namespace OverervingDieren.DAL
             soortConnection.Close();
 
             //Als het dier nog niet bestaat, komt er geen foutmelding en gaat de code verder met het toevoegen aan de database
-            string query = "INSERT INTO DIER (Soort, Naam, Geluid, AantalPoten, HeeftVacht, kanVliegen, draagtHoed, heeftHuisje, EigenaarId) " +
-                "VALUES (@Soort, @Naam, @Geluid, @AantalPoten, @HeeftVacht, @kanVliegen, @draagtHoed, @heeftHuisje, @EigenaarId)";
+            
+            string query = "INSERT INTO DIER (ChipNr, SoortId, Naam, Geluid, AantalPoten, HeeftVacht, kanVliegen, draagtHoed, heeftHuisje, Eigenaar) " +
+                "VALUES (@ChipNr, @Soort, @Naam, @Geluid, @AantalPoten, @HeeftVacht, @kanVliegen, @draagtHoed, @heeftHuisje, @EigenaarId)";
 
             using var connection = new SqlConnection(connectionString);
             connection.Open();
             using var command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ChipNr", nextChipNr);
             command.Parameters.AddWithValue("@EigenaarId", eigenaarId);            
             command.Parameters.AddWithValue("@Soort", soortId);
 

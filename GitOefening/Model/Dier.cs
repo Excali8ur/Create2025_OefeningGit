@@ -11,6 +11,7 @@ namespace OverervingDieren.Model
     /// </summary>
     public abstract class Dier
     {
+        public int chipNr { get; protected set; }
         //Eigenschappen
         //Protected -> Beschikbaar voor eigen klasse en alle subklassen
         //Dit zijn allemaal properties. Deze kunnen opgevraagd worden van buitenaf
