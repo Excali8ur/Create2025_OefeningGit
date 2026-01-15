@@ -66,6 +66,13 @@ namespace OverervingDieren
                 }
                 Console.WriteLine();
             }
+            Vogelbekdier vogelbekdier = new Vogelbekdier("Perry de tweede", "Prrrr", 4, true, false);
+            Hert rudolph = new Hert("Larry", "autongelukgeluiden", 4, true, true);
+
+            Console.WriteLine(vogelbekdier.MaakGeluid());
+            Console.WriteLine(rudolph.MaakGeluid());
+            vogelbekdier.ZetHoedOp();
+            rudolph.WordtAangereden();
         }
         /*
         Dier perry = new Vogelbekdier("Perry", "Prrrr", 4, true, true);
