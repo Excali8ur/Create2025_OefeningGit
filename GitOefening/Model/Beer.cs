@@ -1,63 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OverervingDieren.Model
+﻿namespace OverervingDieren.Model
 {
-    internal class Beer : Dier
+    public class Beer : Dier
     {
-        private bool drinktBier;
-        private bool isDronken;
-        public int biertjesOp {  get; private set; }
-        public Beer(string naam, string geluid, int aantalPoten, bool heeftVacht, bool drinktBier)
-    : base(naam, geluid, aantalPoten, heeftVacht) //Constructor van de basisklasse
+        public Beer(string naam, string geluid, int aantalPoten, bool heeftVacht, bool kanVliegen) 
+            : base(naam, geluid, aantalPoten, heeftVacht, kanVliegen)
         {
-            this.biertjesOp = 0;
-            this.isDronken = false;
-            this.drinktBier= drinktBier;
-
         }
-
-
-        public void DrinktBier()
+        public override string MaakGeluid()
         {
-
-            if (drinktBier == true)
-            { 
-                biertjesOp += 1;
-                if (biertjesOp == 15)
-                {
-                    isDronken = true;
-                }
-            }
+            throw new NotImplementedException();
         }
-        public bool IsDronken() 
-        { 
-            if (isDronken == true)
-            {
-                return true;
-            }
-            return false;
-        }
-
     }
 }
-/*
-░░░░░░░░░░░░░░░░░░░░░░█████████
-░░███████░░░░░░░░░░███▒▒▒▒▒▒▒▒███
-░░█▒▒▒▒▒▒█░░░░░░░███▒▒▒▒▒▒▒▒▒▒▒▒▒███
-░░░█▒▒▒▒▒▒█░░░░██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
-░░░░█▒▒▒▒▒█░░░██▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒███
-░░░░░█▒▒▒█░░░█▒▒▒▒▒▒████▒▒▒▒████▒▒▒▒▒▒██
-░░░█████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
-░░░█▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒██
-░██▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒██▒▒▒▒▒▒▒▒▒▒██▒▒▒▒██
-██▒▒▒███████████▒▒▒▒▒██▒▒▒▒▒▒▒▒██▒▒▒▒▒██
-█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒████████▒▒▒▒▒▒▒██
-██▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
-░█▒▒▒███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
-░██▒▒▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█
-░░████████████░░░█████████████████
-            */
