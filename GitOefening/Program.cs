@@ -1,5 +1,4 @@
-﻿using OverervingDieren.DAL;
-using OverervingDieren.Model;
+﻿using OverervingDieren.Model;
 
 namespace OverervingDieren
 {
@@ -7,45 +6,28 @@ namespace OverervingDieren
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welkom diereneigenaren!\n");
+            //Bob, 23
+            //Henk, 12
+            //Casandra, 2
 
-            Dal dal = new Dal("Huisdieren");
-            List<Eigenaar> eigenaren = dal.GetAlleEigenaren();
+            List<Bezoeker> bezoekers = new List<Bezoeker>();
+            Bezoeker bob = new Bezoeker("Bob", 23);
+            bezoekers.Add(bob);
+            bezoekers.Add(new Bezoeker("Henk", 12));
+            bezoekers.Add(new Bezoeker("Casandra", 2));
 
-            foreach (Eigenaar eigenaar in eigenaren)
-            {
-                Console.WriteLine($"Eigenaar: {eigenaar.ToonGegevens()}");
+            Ticket gezinsuitje = new Ticket(25, 30, bezoekers);
+            int hoeveelMoetenZeBetalen = gezinsuitje.ToonPrijs();
+            Console.WriteLine($"Totaalprijs = {hoeveelMoetenZeBetalen}");
 
-                List<Dier> dieren = dal.GetAlleDierenVanEigenaar(eigenaar.Id);
-                Console.WriteLine("-----------------------------------------");
-                Console.WriteLine("-----------------------------------------");
-                Console.WriteLine("Dieren:");
-                foreach (Dier dier in dieren)
-                {
-                    Console.WriteLine($"* {dier.ToonDetails()}");
-                }
-                Console.WriteLine();
-            }
+            //Tante Truus, 101
+            Bezoeker truus = new Bezoeker("Tante Truus", 101);
+            gezinsuitje.VoegBezoekerToe(truus);
+            //Embryo Erin, -3
+            gezinsuitje.VoegBezoekerToe(new Bezoeker("Embryo Erin", -3));
 
-            /*
-            Dier perry = new Vogelbekdier("Perry", "Prrrr", 4, true, true);
-            Dier barry = new Vogelbekdier("Barry", "Growl", 4, true, false);
-            
-            Dier gerry = new Kat("Gerry", "Sjlur", 0, false);
-
-            Console.WriteLine( perry.MaakGeluid());
-            Console.WriteLine( gerry.MaakGeluid());
-
-            string geluid = barry.MaakGeluid();
-            Console.WriteLine(geluid);
-
-            Dier vogelbekdier = new Vogelbekdier("Perry de tweede", "Prrrr", 4, true, false);
-
-            Console.WriteLine(vogelbekdier.MaakGeluid());
-            //Gebruik maken van specifieke eigenschappen of gedrag van de subklasse ->
-            //Eerst aangeven welke subklasse het is (tussen () )
-            ( (Vogelbekdier)vogelbekdier ).ZetHoedOp();
-            */
+            hoeveelMoetenZeBetalen = gezinsuitje.ToonPrijs();
+            Console.WriteLine($"Totaalprijs = {hoeveelMoetenZeBetalen}");
         }
     }
 }
