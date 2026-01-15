@@ -1,48 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OverervingDieren.Model
+﻿namespace OverervingDieren.Model
 {
-    internal class Slak : Dier
+    public class Slak : Dier
     {
-        ///Eigenschappen specifiek voor Slakken
-        private bool heeftHuisje;
+        public bool heeftHuisje { get; private set; }
 
-        ///Constructor
-        public Slak(string naam, string geluid, int aantalPoten, bool heeftVacht, bool heeftHuisje)
-            : base(naam, geluid, aantalPoten, heeftVacht) //Constructor van de basisklasse
+        public Slak(string naam, string geluid, int aantalPoten, bool heeftVacht, bool kanVliegen, bool heeftHuisje)
+            : base(naam, geluid, aantalPoten, heeftVacht, kanVliegen)
         {
+            this.naam = naam;
+            this.geluid = geluid;
+            this.aantalPoten = aantalPoten;
+            this.heeftVacht = heeftVacht;
+            this.kanVliegen = kanVliegen;
             this.heeftHuisje = heeftHuisje;
         }
 
-        public void DraagHuisje()
+        public override string MaakGeluid()
         {
-            heeftHuisje = true;
-        }
-
-        public void LegHuisjeAf()
-        {
-            heeftHuisje = false;
+            throw new NotImplementedException();
         }
     }
 }
-/*
-░░░░░░░░░░░░░░░░░░░░░░█████████
-░░███████░░░░░░░░░░███▒▒▒▒▒▒▒▒███
-░░█▒▒▒▒▒▒█░░░░░░░███▒▒▒▒▒▒▒▒▒▒▒▒▒███
-░░░█▒▒▒▒▒▒█░░░░██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
-░░░░█▒▒▒▒▒█░░░██▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒███
-░░░░░█▒▒▒█░░░█▒▒▒▒▒▒████▒▒▒▒████▒▒▒▒▒▒██
-░░░█████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
-░░░█▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒██
-░██▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒██▒▒▒▒▒▒▒▒▒▒██▒▒▒▒██
-██▒▒▒███████████▒▒▒▒▒██▒▒▒▒▒▒▒▒██▒▒▒▒▒██
-█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒████████▒▒▒▒▒▒▒██
-██▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
-░█▒▒▒███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
-░██▒▒▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█
-░░████████████░░░█████████████████
-*/
