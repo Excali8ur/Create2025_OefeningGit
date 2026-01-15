@@ -1,33 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OverervingDieren.Model
+﻿namespace OverervingDieren.Model
 {
-    internal class Slak : Dier
+    public class Slak : Dier
     {
-        //Specifieke eigenschap voor alleen Slak
-        private bool heeftHuisje;
+        public bool heeftHuisje { get; private set; }
 
-        //Consctructor
-        public Slak(string naam, string geluid, int aantalPoten, bool heeftVacht, bool heeftHuisje)
-           : base(naam, geluid, aantalPoten, heeftVacht)
+        public Slak(string naam, string geluid, int aantalPoten, bool heeftVacht, bool kanVliegen, bool heeftHuisje)
+            : base(naam, geluid, aantalPoten, heeftVacht, kanVliegen)
         {
+            this.naam = naam;
+            this.geluid = geluid;
+            this.aantalPoten = aantalPoten;
+            this.heeftVacht = heeftVacht;
+            this.kanVliegen = kanVliegen;
             this.heeftHuisje = heeftHuisje;
         }
 
-        public void HeeftHuisjeWel()
+        public override string MaakGeluid()
         {
-            heeftHuisje = true;
-        }
-
-        public void HeeftHuisjeNiet()
-        {
-            heeftHuisje = false;
+            throw new NotImplementedException();
         }
     }
-
 }
