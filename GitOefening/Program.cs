@@ -16,7 +16,28 @@ namespace OverervingDieren
                 switch (keuze)
                 {
                     case "0":
-                        Console.WriteLine("Optie 0");
+                        Console.WriteLine("Optie 0: Werk met de stapel");
+                        ADTStapel stapel = new ADTStapel();
+                        Console.WriteLine("****************");
+
+                        Console.WriteLine(stapel.Push(5));
+                        Console.WriteLine(stapel.ToonStapel());
+                        Console.WriteLine("****************");
+
+                        for (int i = 0; i < 18; i++)
+                        {
+                            Console.WriteLine(stapel.Push(i));                            
+                        }
+                        Console.WriteLine(stapel.ToonStapel());
+                                                
+                        Console.WriteLine(stapel.Push(220));
+                        Console.WriteLine(stapel.Push(-9));
+                        Console.WriteLine(stapel.ToonStapel());
+
+                        
+
+                        Console.WriteLine(stapel.Pop());
+                        Console.WriteLine(stapel.ToonStapel());
                         break;
                     case "1":
                         Console.WriteLine("Optie 1: Toon eigenaren met dieren");
